@@ -41,6 +41,10 @@ class EventDispatcherTest extends \tests\BaseTest {
                         'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener' 
                     ),
                     array(
+                        'event' => 'request_end',
+                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener' 
+                    ),
+                    array(
                         'event' => 'on_entry_point',
                         'listener' => 'Gossamer\\Horus\\Authorizations\\Listeners\\CheckServerCredentialsListener' 
                     )
