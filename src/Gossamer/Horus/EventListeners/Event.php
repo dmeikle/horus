@@ -21,4 +21,12 @@ class Event
     public function getParams() {
         return $this->params;
     }
+    
+    public function getParam($key) {
+        if(array_key_exists($key, $this->params)) {
+            return $this->params[$key];
+        }
+        
+        return null;
+    }
 }
