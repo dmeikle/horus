@@ -32,6 +32,46 @@ class EventDispatcherTest extends \tests\BaseTest {
         $this->assertEquals($request->getAttribute('result'), 'TestListener loaded successfully');
     }
     
+    /**
+     * @group initiate
+     */
+    public function testServerInitiate() {
+        $request = $this->getRequest();
+        
+        $dispatcher = new EventDispatcher(null, $this->getLogger(), $request);
+        $dispatcher->configListeners($this->getListenerConfig());
+        $dispatcher->dispatch('server', 'server_initiate', array('host' => 'local', 'port' => '123'));
+        $this->assertNotNull($request->getAttribute('result_on_server_initiate'));
+      
+    }
+    
+    /**
+     * @group startup
+     */
+    public function testServerStartup() {
+        $request = $this->getRequest();
+        
+        $dispatcher = new EventDispatcher(null, $this->getLogger(), $request);
+        $dispatcher->configListeners($this->getListenerConfig());
+        $dispatcher->dispatch('server', 'server_startup', array('host' => 'local', 'port' => '123'));
+        $this->assertNotNull($request->getAttribute('result_on_server_startup'));
+      
+    }
+    
+    /**
+     * @group connect
+     */
+    public function testServerConnect() {
+        $request = $this->getRequest();
+        
+        $dispatcher = new EventDispatcher(null, $this->getLogger(), $request);
+        $dispatcher->configListeners($this->getListenerConfig());
+        $dispatcher->dispatch('server', 'client_server_connect', array('host' => 'local', 'port' => '123'));
+        $this->assertNotNull($request->getAttribute('result_on_client_server_connect'));
+      
+    }
+    
+    
     private function getListenerConfig() {
         return array( 
             'all' => array(
@@ -45,8 +85,24 @@ class EventDispatcherTest extends \tests\BaseTest {
                         'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener' 
                     ),
                     array(
-                        'event' => 'on_entry_point',
+                        'event' => 'entry_point',
                         'listener' => 'Gossamer\\Horus\\Authorizations\\Listeners\\CheckServerCredentialsListener' 
+                    )
+                )
+            ),
+            'server' => array(  
+                'listeners' => array(
+                    array(
+                        'event' => 'client_server_connect',
+                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\ServerEventListener' 
+                    ),
+                    array(
+                        'event' => 'server_initiate',
+                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\ServerEventListener' 
+                    ),
+                    array(
+                        'event' => 'server_startup',
+                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\ServerEventListener' 
                     )
                 )
             )

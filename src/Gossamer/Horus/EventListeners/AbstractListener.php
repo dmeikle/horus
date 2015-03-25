@@ -20,7 +20,7 @@ class AbstractListener
         $this->request = $request;
     }
     
-    public function execute($state, $params) {
+    public function execute($state, &$params) {
         $method = 'on_' . $state;
         $event = null;
         if(!$params instanceof Event) {
@@ -30,7 +30,7 @@ class AbstractListener
         }
        // $this->logger->addDebug('checking listener for method: ' . $method);
         if (method_exists($this, $method)) {
-            call_user_func_array(array($this, $method), array($event));      
+            call_user_func_array(array($this, $method), array(&$event));      
             
         }
     }

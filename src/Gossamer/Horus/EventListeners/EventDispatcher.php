@@ -31,6 +31,7 @@ class EventDispatcher{
     public function configListeners(array $listeners) {
 
         foreach($listeners as $uri => $listener) {
+            
             if(array_key_exists('listeners', $listener)  && count($listener['listeners']) > 0) {
            
                 try{
@@ -44,16 +45,16 @@ class EventDispatcher{
                 
             }
         }
+       
     }
     
     private function addEventHandler($uri, array $listeners) {
         foreach($listeners as $listener) {
- 
-            
+             
             $handler = new EventHandler($this->logger, $this->request); 
           
             $handler->addListener($listener); 
-          
+       
             $this->listen($uri, $handler);
         } 
            
@@ -65,13 +66,13 @@ class EventDispatcher{
     }
  
     public function dispatch($uri, $state, $params = null) {
-      
+     
         if(!array_key_exists($uri, $this->listeners)) {
-                     
+                
             return;
         }        
      
-       
+      
         foreach ($this->listeners[$uri] as $listener)
         {
             $listener->setState($state, $params);
