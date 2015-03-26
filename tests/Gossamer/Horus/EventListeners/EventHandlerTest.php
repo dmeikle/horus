@@ -23,7 +23,7 @@ class EventHandlerTest extends \tests\BaseTest{
     public function testAddListener() {
         $request = $this->getRequest();
         $handler = new EventHandler($this->getLogger(), $request);
-        $listenerConfig = array('listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener');
+        $listenerConfig = array('listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener', 'event' => 'request_start');
         
         $handler->addListener($listenerConfig);
         $handler->setState('request_start', array());

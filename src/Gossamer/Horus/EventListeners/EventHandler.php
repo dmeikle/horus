@@ -40,7 +40,7 @@ class EventHandler
         foreach($this->listeners as $listener) {
             $listenerClass= $listener['listener'];
             $handler = array($listenerClass, 'on_' . $this->state);
-          
+        
             if($this->state == $listener['event'] && is_callable($handler)) {
               
                 $eventListener = new $listenerClass($this->logger, $this->request);    
