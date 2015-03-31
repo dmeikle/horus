@@ -29,7 +29,7 @@ class ServerEventListener extends AbstractListener {
     
     public function on_server_startup(Event &$event) {
         $this->request->setAttribute('result_on_server_startup', 'successful call');
-        echo '>> Ticker Server sucessfully started on ' . $event->getParam('host') . ':' . $event->getParam('port') . "\r\n";
+        echo '>> Ticker Server successfully started on ' . $event->getParam('host') . ':' . $event->getParam('port') . "\r\n";
         $this->logger->addInfo('Ticker Server successfully started');
     }
     

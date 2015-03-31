@@ -16,6 +16,7 @@ class EventDispatcher{
     
     private $request = null;
     
+    private $container = null;
     
     public function __construct($config = array(), Logger $logger, Request $request) {
        
@@ -27,6 +28,9 @@ class EventDispatcher{
         }
     }
     
+    public function setContainer(ContainerInterface $container) {
+        $this->container = $container;
+    }
     
     public function configListeners(array $listeners) {
 
@@ -39,10 +43,8 @@ class EventDispatcher{
                 }catch(\Exception $e) {
                     //assume the developer has an empty element such as:
                     //listeners:
-                    //with no sub elements, which is allowable
-                                     
-                }
-                
+                    //with no sub elements, which is allowable                                     
+                }                
             }
         }
        
