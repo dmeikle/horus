@@ -18,7 +18,7 @@ use Gossamer\Horus\EventListeners\EventDispatcher;
  *
  * @author Dave Meikle
  */
-class EventDispatcherTrait {
+trait EventDispatcherTrait {
     
     protected $eventDispatcher;
     
