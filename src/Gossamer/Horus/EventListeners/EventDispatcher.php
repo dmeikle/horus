@@ -18,7 +18,7 @@ class EventDispatcher{
     
     private $container = null;
     
-    public function __construct($config = array(), Logger $logger, Request $request) {
+    public function __construct($config = array(), Logger $logger, Request &$request) {
        
         $this->logger = $logger;
         $this->request = $request;
