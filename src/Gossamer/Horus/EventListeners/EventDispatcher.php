@@ -67,7 +67,7 @@ class EventDispatcher{
         $this->listeners[$uri][] = $handler;
     }
  
-    public function dispatch($uri, $state, $params = null) {
+    public function dispatch($uri, $state, Event &$event = null) {
      
         if(!array_key_exists($uri, $this->listeners)) {
                 
@@ -77,7 +77,7 @@ class EventDispatcher{
       
         foreach ($this->listeners[$uri] as $listener)
         {
-            $listener->setState($state, $params);
+            $listener->setState($state, $event);
         }
     }
     
