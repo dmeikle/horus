@@ -18,7 +18,7 @@ class EventHandler
    
     private $request = null;
     
-    public function __construct(Logger $logger, Request $request) {
+    public function __construct(Logger $logger, Request &$request) {
         
         $this->logger = $logger;
         $this->request = $request;
