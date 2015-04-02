@@ -12,7 +12,7 @@ class EventHandler
     
     private $state = null;
     
-    private $params = null;
+    private $event = null;
     
     private $logger = null;
    
@@ -45,7 +45,7 @@ class EventHandler
               
                 $eventListener = new $listenerClass($this->logger, $this->request);    
                 $eventListener->setConfig($listener);
-                $eventListener->execute($this->state, $this->params);
+                $eventListener->execute($this->state, $this->event);
             } else {
                 $this->logger->addError($listenerClass . ' not found by EventHandler::notifyListeners');             
             }
@@ -55,9 +55,9 @@ class EventHandler
     }
 
     
-    public function setState($state, $params) {
+    public function setState($state, Event &$event) {
         $this->state = $state;
-        $this->params = $params;
+        $this->event = $event;
         
         $this->notifyListeners();
     }
