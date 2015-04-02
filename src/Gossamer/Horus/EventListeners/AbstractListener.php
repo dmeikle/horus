@@ -20,17 +20,17 @@ class AbstractListener
         $this->request = $request;
     }
     
-    public function execute($state, &$params) {
+    public function execute($state, Event &$event) {
         $method = 'on_' . $state;
         $event = null;
-        if(!$params instanceof Event) {
-            $event = new Event($state, $params);
-        } else {
-            $event = $params;
-        }
+        //if(!$params instanceof Event) {
+         //   $event = new Event($state, $event);
+        //} else {
+        //    $event = $params;
+        //}
        // $this->logger->addDebug('checking listener for method: ' . $method);
         if (method_exists($this, $method)) {
-            call_user_func_array(array($this, $method), array(&$event));      
+            call_user_func_array(array($this, $method), array($event));      
             
         }
     }
