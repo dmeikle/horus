@@ -64,7 +64,7 @@ class EventDispatcher{
     
     public function listen($uri, EventHandler $handler) {
        
-        $this->listeners[$uri][] = $handler;
+        $this->listeners[$uri][get_class($handler)] = $handler;
     }
  
     public function dispatch($uri, $state, Event &$event) {
