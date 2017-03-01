@@ -8,14 +8,14 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  */
-namespace Gossamer\Horus\Core;
+namespace Gossamer\Horus\Http;
 
 /**
  * Request
  *
  * @author Dave Meikle
  */
-class Request {
+class Request implements HttpInterface{
     
     private $attributes = array();
     
