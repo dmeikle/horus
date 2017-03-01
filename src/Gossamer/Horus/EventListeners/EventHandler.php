@@ -13,7 +13,7 @@ class EventHandler
     
     private $state = null;
     
-    private $params = null;
+    private $event = null;
     
     private $container = null;
     
@@ -25,6 +25,7 @@ class EventHandler
     
     private $datasourceFactory = null;
     
+
     private $datasources = null;
     
     private $datasourceKey = null;
@@ -72,8 +73,10 @@ class EventHandler
     public function setEventDispatcher(EventDispatcher &$eventDispatcher) {
         $this->eventDispatcher = $eventDispatcher;
     }
-    
-    
+
+    /**
+     * @param $listener
+     */
     public function addListener($listener) {
         
         $this->listeners[] = $listener;
@@ -96,11 +99,10 @@ class EventHandler
      * traverses list of listeners and executes their calls
      */
     public function notifyListeners() {
-        
+
         foreach ($this->listeners as $listener) {
 
             $listenerClass = $listener['listener'];
-
             $handler = array($listenerClass, 'on_' . $this->state);
             if(!class_exists($listenerClass)) {
                 throw new \Exception($listenerClass . ' does not exist');
@@ -115,19 +117,23 @@ class EventHandler
                 $eventListener->setEventDispatcher($this->eventDispatcher);
                 $eventListener->setConfig($listener);               
                 $eventListener->execute($this->state, $this->params);
-                
+
             }
         }
+      
+     
     }
+
 
     /**
      * @param $state
-     * @param $params
+     * @param Event $event
      * @throws \Exception
      */
-    public function setState($state, $params) {
+    public function setState($state, Event &$event) {
+
         $this->state = $state;
-        $this->params = $params;
+        $this->event = $event;
         
         $this->notifyListeners();
     }

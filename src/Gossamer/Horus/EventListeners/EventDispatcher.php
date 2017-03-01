@@ -6,7 +6,6 @@ namespace Gossamer\Horus\EventListeners;
 use Gossamer\Horus\EventListeners\EventHandler;
 use Gossamer\Horus\Http\HttpInterface;
 use Monolog\Logger;
-use Gossamer\Horus\Core\Request;
 
 
 class EventDispatcher{
@@ -19,6 +18,7 @@ class EventDispatcher{
 
     private $response = null;
     
+
     private $datasourceFactory = null;
 
     private $datasources = null;
@@ -30,6 +30,7 @@ class EventDispatcher{
     private $ymlKey = null;
 
     public function __construct(Logger $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey, $config = null) {
+
        
         $this->logger = $logger;
         $this->request = $request;
@@ -54,15 +55,16 @@ class EventDispatcher{
     }
 
 
-    public function setContainer($container) {
+    public function setContainer(ContainerInterface $container) {
         $this->container = $container;
     }
-    
     
     public function configListeners(array $listeners) {
 
         foreach($listeners as $uri => $listener) {
+
             if (($uri == 'all' || $uri == $this->ymlKey) && (array_key_exists('listeners', $listener) && count($listener['listeners']) > 0)) {
+
 
                 try{
                     $this->addEventHandler( $uri, $listener['listeners']);   
@@ -73,10 +75,12 @@ class EventDispatcher{
                     $this->logger->addError('EventDispatcher::configListeners threw exception adding eventhandler for ' . $uri);
                     $this->logger->addError($e->getMessage());
                 }
-                
+
             }
         }
+       
     }
+
 
     /**
      * configures event listeners for a local node
@@ -165,7 +169,7 @@ class EventDispatcher{
      * @param $state
      * @param Event|null $params
      */
-    public function dispatch($uri, $state, Event &$params = null) {
+    public function dispatch($uri, $state, Event &$event = null) {
 
         $this->logger->addDebug("dispatch called for $uri with state set to $state");
 
@@ -178,7 +182,7 @@ class EventDispatcher{
         $this->logger->addDebug("listeners found - iterating");
 
         foreach ($this->listeners[$uri] as $listener) {
-            $listener->setState($state, $params);
+            $listener->setState($state, $event);
         }
     }
     

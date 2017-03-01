@@ -35,6 +35,7 @@ class AbstractListener
         $this->response = $response;
     }
 
+
     /**
      * accessor
      * @param string $datasourceKey
@@ -139,6 +140,7 @@ class AbstractListener
 //                call_user_func_array(array($this, $method), array($params));
 //            }
             call_user_func_array(array($this, $method), array($event));
+
         }
     }
 

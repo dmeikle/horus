@@ -9,7 +9,7 @@ class Event
     private $params = null;
     
     
-    public function __construct($eventName, $params) {
+    public function __construct($eventName, array $params) {
         $this->eventName = $eventName;
         $this->params = $params;
     }
@@ -23,10 +23,14 @@ class Event
     }
     
     public function getParam($key) {
-        if(array_key_exists($key, $this->params)) {
+        if(!is_null($this->params) && array_key_exists($key, $this->params)) {
             return $this->params[$key];
         }
         
         return null;
+    }
+    
+    public function setParam($key, $params) {
+        $this->params[$key] = $params;
     }
 }

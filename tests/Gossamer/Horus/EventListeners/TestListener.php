@@ -22,7 +22,7 @@ use Gossamer\Horus\EventListeners\Event;
 class TestListener extends AbstractListener{
     
     public function on_request_start(Event $event) {
-      
+      echo "TestListener loaded successfully\r\n";
         $this->request->setAttribute('result', 'TestListener loaded successfully');
     }
     public function on_request_end(Event $event) {
