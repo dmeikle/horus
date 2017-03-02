@@ -27,7 +27,7 @@
       <file leaf-file-name="EventDispatcher.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="-1564">
               <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#50#88#0#PHP" expanded="true" />
@@ -49,8 +49,8 @@
       <file leaf-file-name="EventHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+            <state relative-caret-position="298">
+              <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
               <folding>
                 <element signature="e#50#88#0#PHP" expanded="true" />
               </folding>
@@ -388,12 +388,12 @@
       <updated>1479094978261</updated>
       <workItem from="1479094992485" duration="846000" />
       <workItem from="1488336259164" duration="7855000" />
-      <workItem from="1488437033701" duration="4497000" />
+      <workItem from="1488437033701" duration="4769000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13198000" />
+    <option name="totallyTimeSpent" value="13470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
@@ -649,7 +649,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
+        <state relative-caret-position="-1564">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#50#88#0#PHP" expanded="true" />
@@ -659,8 +659,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+        <state relative-caret-position="298">
+          <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
           <folding>
             <element signature="e#50#88#0#PHP" expanded="true" />
           </folding>

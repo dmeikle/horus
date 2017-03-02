@@ -78,7 +78,7 @@ class EventHandler
     /**
      * @param $listener
      */
-    public function addListener($listener) {
+    public function setListener($listener) {
         
         $this->listeners[] = $listener;
         $this->logger->addDebug($listener['listener'] . ' added to listeners');
