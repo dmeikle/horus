@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7518efba-0454-4082-9e5b-ec505d580670" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php" afterPath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php" afterPath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php" />
     </list>
     <ignored path="horus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventDispatcher.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventDispatcher.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="425">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="e#50#88#0#PHP" expanded="true" />
               </folding>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventHandler.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventHandler.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
+            <state relative-caret-position="1054">
+              <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
               <folding>
                 <element signature="e#50#88#0#PHP" expanded="true" />
               </folding>
@@ -139,8 +139,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php" />
         <option value="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php" />
+        <option value="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php" />
       </list>
     </option>
   </component>
@@ -388,12 +388,12 @@
       <updated>1479094978261</updated>
       <workItem from="1479094992485" duration="846000" />
       <workItem from="1488336259164" duration="7855000" />
-      <workItem from="1488437033701" duration="4241000" />
+      <workItem from="1488437033701" duration="4497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12942000" />
+    <option name="totallyTimeSpent" value="13198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
@@ -647,20 +647,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php">
+    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
+        <state relative-caret-position="425">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="e#50#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
+    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+        <state relative-caret-position="1054">
+          <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
           <folding>
             <element signature="e#50#88#0#PHP" expanded="true" />
           </folding>
