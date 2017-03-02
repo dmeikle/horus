@@ -63,7 +63,7 @@ class EventHandler
      * @param DatasourceFactory $factory
      * @param array $datasources
      */
-    public function setDatasources(DatasourceFactory $factory, array $datasources) {
+    public function setDatasources(DatasourceFactor $factory, array $datasources) {
         $this->datasourceFactory = $factory;
         $this->datasources = $datasources;
     }
