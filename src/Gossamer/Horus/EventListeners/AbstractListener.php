@@ -5,8 +5,7 @@ namespace Gossamer\Horus\EventListeners;
 use Detection\MobileDetect;
 use Gossamer\Horus\Http\HttpInterface;
 use Monolog\Logger;
-
-use Gossamer\Horus\EventListeners\Event;
+use Gossamer\Pesedget\Database\DatasourceFactory;
 
 
 class AbstractListener
@@ -50,7 +49,7 @@ class AbstractListener
      * @param DatasourceFactory $factory
      * @param array $datasources
      */
-    public function setDatasources(DatasourceFactoryInterface $factory, array $datasources) {
+    public function setDatasources(DatasourceFactory $factory, array $datasources) {
         $this->datasourceFactory = $factory;
         $this->datasources = $datasources;
     }
