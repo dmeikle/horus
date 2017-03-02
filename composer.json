@@ -22,6 +22,7 @@
   "require": {
     "monolog/monolog": "1.2.*",
     "gossamer/caching": "dev-master",
+    "gossamer/pesedget": "dev-master",
     "mobiledetect/mobiledetectlib": "^2.8"
   },
   "require-dev": {

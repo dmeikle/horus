@@ -6,6 +6,7 @@ namespace Gossamer\Horus\EventListeners;
 use Gossamer\Horus\Http\HttpInterface;
 use Monolog\Logger;
 use Gossamer\Horus\Core\Request;
+use Gossamer\Pesedget\Database\DatasourceFactory;
 
 class EventHandler
 {
