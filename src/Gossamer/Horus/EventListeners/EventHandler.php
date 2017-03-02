@@ -117,7 +117,7 @@ class EventHandler
                 $eventListener->setDatasourceKey($this->datasourceKey);
                 $eventListener->setEventDispatcher($this->eventDispatcher);
                 $eventListener->setConfig($listener);               
-                $eventListener->execute($this->state, $this->params);
+                $eventListener->execute($this->state, $this->event);
 
             }
         }
