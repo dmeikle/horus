@@ -21,6 +21,7 @@
   "minimum-stability": "stable",
   "require": {
     "monolog/monolog": "1.2.*",
+    "gossamer/caching": "dev-master",
     "mobiledetect/mobiledetectlib": "^2.8"
   },
   "require-dev": {
@@ -28,6 +29,7 @@
   },
   "autoload": {
     "psr-0": {
+      "Gossamer\\Horus": "src/"
     }
   }
 }
