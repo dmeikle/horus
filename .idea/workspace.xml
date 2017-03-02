@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7518efba-0454-4082-9e5b-ec505d580670" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php" afterPath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php" afterPath="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php" />
     </list>
     <ignored path="horus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,21 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventDispatcher.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventDispatcher.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="30" column="46" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DispatchLogger.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DispatchLogger.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -149,6 +148,7 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php" />
+        <option value="$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php" />
       </list>
     </option>
   </component>
@@ -396,12 +396,12 @@
       <updated>1479094978261</updated>
       <workItem from="1479094992485" duration="846000" />
       <workItem from="1488336259164" duration="7855000" />
-      <workItem from="1488437033701" duration="1397000" />
+      <workItem from="1488437033701" duration="1707000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10098000" />
+    <option name="totallyTimeSpent" value="10408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
@@ -653,18 +653,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php">
+    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/EventDispatcher.php">
+    <entry file="file://$PROJECT_DIR$/src/Gossamer/Horus/EventListeners/DispatchLogger.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="374">
+          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding />
         </state>
       </provider>

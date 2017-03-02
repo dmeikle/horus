@@ -18,7 +18,14 @@
 namespace Gossamer\Horus\EventListeners;
 
 
-class DispatchLogger
+interface DispatchLogger
 {
 
+    public function addError($message);
+
+    public function addWarning($message);
+
+    public function addDebug($message);
+
+    public function addInfo($message);
 }
