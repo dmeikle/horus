@@ -3,9 +3,8 @@
 
 namespace Gossamer\Horus\EventListeners;
 
-use Gossamer\Horus\EventListeners\EventHandler;
 use Gossamer\Horus\Http\HttpInterface;
-use Monolog\Logger;
+
 
 
 class EventDispatcher{
@@ -29,7 +28,7 @@ class EventDispatcher{
 
     private $ymlKey = null;
 
-    public function __construct(Logger $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey, $config = null) {
+    public function __construct(DispatchLogger $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey, $config = null) {
 
        
         $this->logger = $logger;
