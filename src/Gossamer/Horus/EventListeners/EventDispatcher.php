@@ -6,17 +6,17 @@ namespace Gossamer\Horus\EventListeners;
 use Gossamer\Horus\Http\HttpInterface;
 
 
+class EventDispatcher
+{
 
-class EventDispatcher{
-    
     private $listeners = array();
- 
+
     private $logger = null;
-    
+
     private $request = null;
 
     private $response = null;
-    
+
 
     private $datasourceFactory = null;
 
@@ -28,18 +28,15 @@ class EventDispatcher{
 
     private $ymlKey = null;
 
-    public function __construct(DispatchLogger $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey, $config = null) {
+    public function __construct(DispatchLogger $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey) {
 
-       
+
         $this->logger = $logger;
         $this->request = $request;
         $this->response = $response;
         $this->requestMethod = $requestMethod;
         $this->ymlKey = $ymlKey;
 
-        if(!is_null($config)) {
-            $this->configListeners($config);
-        }
     }
 
     /**
@@ -53,21 +50,25 @@ class EventDispatcher{
         $this->datasources = $datasources;
     }
 
+    public function setConfiguration(array $config) {
+        $this->configListeners($config);
+    }
+
 
     public function setContainer(ContainerInterface $container) {
         $this->container = $container;
     }
-    
+
     public function configListeners(array $listeners) {
 
-        foreach($listeners as $uri => $listener) {
+        foreach ($listeners as $uri => $listener) {
 
             if (($uri == 'all' || $uri == $this->ymlKey) && (array_key_exists('listeners', $listener) && count($listener['listeners']) > 0)) {
 
 
-                try{
-                    $this->addEventHandler( $uri, $listener['listeners']);   
-                }catch(\Exception $e) {
+                try {
+                    $this->addEventHandler($uri, $listener['listeners']);
+                } catch (\Exception $e) {
                     //assume the developer has an empty element such as:
                     //listeners:
                     //with no sub elements, which is allowable
@@ -77,7 +78,7 @@ class EventDispatcher{
 
             }
         }
-       
+
     }
 
 
@@ -159,7 +160,6 @@ class EventDispatcher{
     }
 
 
-
     /**
      * * goes through its listeners list and executes any listeners that are
      * listening for this URI and this STATE
@@ -184,7 +184,7 @@ class EventDispatcher{
             $listener->setState($state, $event);
         }
     }
-    
+
     public function getListenerURIs() {
         return array_keys($this->listeners);
     }
