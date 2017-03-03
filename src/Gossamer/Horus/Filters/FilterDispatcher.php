@@ -22,6 +22,7 @@ use Gossamer\Horus\Datasources\DatasourceFactoryInterface;
 use Gossamer\Horus\Http\HttpInterface;
 use Gossamer\Neith\Logging\LoggingInterface;
 use Gossamer\Pesedget\Database\DatasourceFactory;
+use Gossamer\Set\Utils\Container;
 
 class FilterDispatcher
 {
@@ -31,10 +32,16 @@ class FilterDispatcher
     private $logger;
 
     private $datasourceFactory;
-    
+
+    private $container;
+
     public function __construct(LoggingInterface $logger) {
         $this->filterChain = new FilterChain();
         $this->logger = $logger;
+    }
+
+    public function setContainer(Container $container) {
+        $this->container = $container;
     }
     
     public function setDatasources(DatasourceFactory $datasourceFactory) {
@@ -49,12 +56,16 @@ class FilterDispatcher
 
     protected function addFilter($filterParams) {
         $filterName = $filterParams['filter'];
-        $filter = new $filterName();
+        $filter = new $filterName($this->getFilterConfiguration($filterParams));
+        $filter->setContainer($this->container);
+        
         $this->filterChain->addFilter($filter);
     }
 
     protected function getFilterConfiguration(array $filterParams) {
-
+        $filterConfig = new FilterConfig($filterParams);
+        
+        return $filterConfig;
     }
 
     public function filterRequest(HttpInterface $request, HttpInterface $response) {

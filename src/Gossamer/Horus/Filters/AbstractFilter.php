@@ -20,19 +20,26 @@ namespace Gossamer\Horus\Filters;
 
 use Gossamer\Horus\Http\HttpInterface;
 use Gossamer\Pesedget\Database\DatasourceFactory;
+use Gossamer\Set\Utils\Container;
 
 class AbstractFilter
 {
     protected $datasourceFactory;
 
     protected $filterConfig;
-    
+
+    protected $container;
+
+    public function __construct(FilterConfig $config) {
+        $this->filterConfig = $config;
+    }
+
     public function setDatasourceFactory(DatasourceFactory $datasourceFactory) {
         $this->datasourceFactory = $datasourceFactory;
     }
 
-    public function init(FilterConfig $config) {
-        $this->filterConfig = $config;
+    public function setContainer(Container $container) {
+        $this->container = $container;
     }
 
     public function execute(HttpInterface $request, HttpInterface $response, FilterChain $chain) {
