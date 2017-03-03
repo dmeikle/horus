@@ -18,8 +18,10 @@
 namespace Gossamer\Horus\Filters;
 
 
+use Gossamer\Horus\Datasources\DatasourceFactoryInterface;
 use Gossamer\Horus\Http\HttpInterface;
 use Gossamer\Neith\Logging\LoggingInterface;
+use Gossamer\Pesedget\Database\DatasourceFactory;
 
 class FilterDispatcher
 {
@@ -28,9 +30,15 @@ class FilterDispatcher
 
     private $logger;
 
+    private $datasourceFactory;
+    
     public function __construct(LoggingInterface $logger) {
         $this->filterChain = new FilterChain();
         $this->logger = $logger;
+    }
+    
+    public function setDatasources(DatasourceFactory $datasourceFactory) {
+        $this->datasourceFactory = $datasourceFactory;
     }
 
     public function setFilters(array $filterConfig) {
@@ -45,12 +53,15 @@ class FilterDispatcher
         $this->filterChain->addFilter($filter);
     }
 
+    protected function getFilterConfiguration(array $filterParams) {
+
+    }
+
     public function filterRequest(HttpInterface $request, HttpInterface $response) {
         try{
             $this->filterChain->execute($request, $response, $this->filterChain);
         }catch(\Exception $e) {
             $this->logger->addError($e->getMessage());
         }
-
     }
 }
