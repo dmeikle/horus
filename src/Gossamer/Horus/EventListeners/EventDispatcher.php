@@ -4,6 +4,7 @@
 namespace Gossamer\Horus\EventListeners;
 
 use Gossamer\Horus\Http\HttpInterface;
+use Gossamer\Neith\Logging\LoggingInterface;
 use Gossamer\Pesedget\Database\DatasourceFactory;
 
 class EventDispatcher
@@ -28,7 +29,7 @@ class EventDispatcher
 
     private $ymlKey = null;
 
-    public function __construct(DispatchLogger $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey) {
+    public function __construct(LoggingInterface $logger, HttpInterface $request, HttpInterface $response, $requestMethod, $ymlKey) {
 
 
         $this->logger = $logger;
