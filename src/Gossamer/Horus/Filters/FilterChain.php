@@ -29,7 +29,18 @@ class FilterChain
     }
 
     public function execute(HttpInterface $request, HttpInterface $response, FilterChain &$chain) {
-        $filter = array_shift($chain);
-        $filter->execute($request, $response, $chain);
+        $filter = $this->next();
+        if($filter !== false) {
+            $filter->execute($request, $response, $chain);
+        }
+        //exit gracefully
+    }
+
+    private function next() {
+        if(count($this->filters) > 0) {
+            return array_shift($this->filters);
+        }
+
+        return false;
     }
 }
