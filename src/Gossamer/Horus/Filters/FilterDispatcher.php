@@ -38,7 +38,7 @@ class FilterDispatcher
     protected function addFilter($filterParams) {
         $filterName = $filterParams['filter'];
         $filter = new $filterName();
-        $this->filterChain[] = $filter;
+        $this->filterChain->addFilter($filter);
     }
 
     public function filterRequest(HttpInterface $request, HttpInterface $response) {
