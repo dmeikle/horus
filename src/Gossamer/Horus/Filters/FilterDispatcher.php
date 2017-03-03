@@ -19,14 +19,18 @@ namespace Gossamer\Horus\Filters;
 
 
 use Gossamer\Horus\Http\HttpInterface;
+use Gossamer\Neith\Logging\LoggingInterface;
 
 class FilterDispatcher
 {
 
     private $filterChain;
 
-    public function __construct() {
+    private $logger;
+
+    public function __construct(LoggingInterface $logger) {
         $this->filterChain = new FilterChain();
+        $this->logger = $logger;
     }
 
     public function setFilters(array $filterConfig) {
@@ -42,6 +46,11 @@ class FilterDispatcher
     }
 
     public function filterRequest(HttpInterface $request, HttpInterface $response) {
-        $this->filterChain->execute($request, $response, $this->filterChain);
+        try{
+            $this->filterChain->execute($request, $response, $this->filterChain);
+        }catch(\Exception $e) {
+            $this->logger->addError($e->getMessage());
+        }
+
     }
 }
