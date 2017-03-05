@@ -8,12 +8,11 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  */
-namespace tests\Gossamer\Horus\EventListeners;
+namespace Gossamer\Horus\EventListeners\Tests;
 
 use Gossamer\Horus\EventListeners\Event;
 use Gossamer\Horus\EventListeners\EventDispatcher;
 use Gossamer\Horus\EventListeners\EventHandler;
-use Gossamer\Horus\Core\Request;
 use Gossamer\Pesedget\Database\DatasourceFactory;
 
 /**
@@ -33,7 +32,7 @@ class EventHandlerTest extends \tests\BaseTest{
         $handler = new EventHandler($this->getLogger(), $request, $response);
         $handler->setEventDispatcher($dispatcher);
         $handler->setDatasources(new DatasourceFactory(), $this->getDatasources());
-        $listenerConfig = array('listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener', 'event' => 'request_start');
+        $listenerConfig = array('listener' => 'Gossamer\\Horus\\EventListeners\\Tests\\TestListener', 'event' => 'request_start');
         $event = new Event('test_add_listener');
         $handler->setListener($listenerConfig);
         $handler->setState('request_start', $event);

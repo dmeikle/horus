@@ -9,11 +9,10 @@
  *  file that was distributed with this source code.
  */
 
-namespace tests\Gossamer\Horus\EventListeners;
+namespace Gossamer\Horus\EventListeners\Tests;
 
 use Gossamer\Horus\EventListeners\Event;
 use Gossamer\Horus\EventListeners\EventDispatcher;
-use Gossamer\Horus\Http\Request;
 use Gossamer\Pesedget\Database\DatasourceFactory;
 
 /**
@@ -95,11 +94,11 @@ class EventDispatcherTest extends \tests\BaseTest {
                 'listeners' => array (
                     array(
                         'event' => 'request_start',
-                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener' 
+                        'listener' => 'Gossamer\\Horus\\EventListeners\\Tests\\TestListener'
                     ),
                     array(
                         'event' => 'request_end',
-                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener' 
+                        'listener' => 'Gossamer\\Horus\\EventListeners\\Tests\\TestListener'
                     )
                 )
             ),
@@ -107,15 +106,15 @@ class EventDispatcherTest extends \tests\BaseTest {
                 'listeners' => array(
                     array(
                         'event' => 'client_server_connect',
-                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\ServerEventListener' 
+                        'listener' => 'Gossamer\\Horus\\EventListeners\\Tests\\ServerEventListener'
                     ),
                     array(
                         'event' => 'server_initiate',
-                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\ServerEventListener' 
+                        'listener' => 'Gossamer\\Horus\\EventListeners\\Tests\\ServerEventListener'
                     ),
                     array(
                         'event' => 'server_startup',
-                        'listener' => 'tests\\Gossamer\\Horus\\EventListeners\\ServerEventListener' 
+                        'listener' => 'Gossamer\\Horus\\EventListeners\\Tests\\ServerEventListener'
                     )
                 )
             )

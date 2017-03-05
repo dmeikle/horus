@@ -7,7 +7,7 @@
  *  For the full copyright and license information, please view the LICENSE
  *  file that was distributed with this source code.
  */
-
+namespace Gossamer\Horus\Filters\Tests;
 /**
  * Created by PhpStorm.
  * User: user
@@ -32,13 +32,13 @@ class FilterDispatcherTest extends \tests\BaseTest
     private function getFilters() {
         return array(
             array(
-                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter1',
+                'filter' => 'Gossamer\\Horus\\Filters\\Tests\\Filter1',
             ),
             array(
-                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter2',
+                'filter' => 'Gossamer\\Horus\\Filters\\Tests\\Filter2',
             ),
             array(
-                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter3'
+                'filter' => 'Gossamer\\Horus\\Filters\\Tests\\Filter3'
             )
         );
     }

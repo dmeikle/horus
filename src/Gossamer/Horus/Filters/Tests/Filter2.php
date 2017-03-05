@@ -15,20 +15,20 @@
  * Time: 11:57 PM
  */
 
-namespace tests\Gossamer\Horus\Filters;
+namespace Gossamer\Horus\Filters\Tests;
 
 
 use Gossamer\Horus\Filters\AbstractFilter;
 use Gossamer\Horus\Filters\FilterChain;
 use Gossamer\Horus\Http\HttpInterface;
 
-class Filter1 extends AbstractFilter
+class Filter2 extends AbstractFilter
 {
 
     public function execute(HttpInterface $request, HttpInterface $response, FilterChain $chain) {
-       echo "this is filter1\r\n";
-        throw new \Exception('throwing exception 1');
-            $chain->execute($request, $response, $chain);
+
+        echo "this is filter2\r\n";
+        $chain->execute($request, $response, $chain);
     }
 
 }

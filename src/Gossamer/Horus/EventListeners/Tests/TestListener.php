@@ -9,7 +9,7 @@
  *  file that was distributed with this source code.
  */
 
-namespace tests\Gossamer\Horus\EventListeners;
+namespace Gossamer\Horus\EventListeners\Tests;
 
 use Gossamer\Horus\EventListeners\AbstractListener;
 use Gossamer\Horus\EventListeners\Event;
