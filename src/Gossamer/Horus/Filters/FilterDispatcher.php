@@ -86,6 +86,7 @@ class FilterDispatcher
             $this->filterChain->execute($request, $response, $this->filterChain);
         }catch(\Exception $e) {
             $this->logger->addError($e->getMessage());
+            throw $e;
         }
     }
 }
