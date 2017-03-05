@@ -30,8 +30,11 @@ class AbstractFilter
 
     protected $container;
 
-    public function __construct(FilterConfig $config) {
+    protected $params = null;
+
+    public function __construct(FilterConfig $config, array $params = null) {
         $this->filterConfig = $config;
+        $this->params = $params;
     }
 
     public function setDatasourceFactory(DatasourceFactory $datasourceFactory) {

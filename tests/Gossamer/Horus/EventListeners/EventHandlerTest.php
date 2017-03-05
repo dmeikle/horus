@@ -10,8 +10,11 @@
  */
 namespace tests\Gossamer\Horus\EventListeners;
 
+use Gossamer\Horus\EventListeners\Event;
+use Gossamer\Horus\EventListeners\EventDispatcher;
 use Gossamer\Horus\EventListeners\EventHandler;
 use Gossamer\Horus\Core\Request;
+use Gossamer\Pesedget\Database\DatasourceFactory;
 
 /**
  * EventHandlerTest
@@ -22,21 +25,23 @@ class EventHandlerTest extends \tests\BaseTest{
     
     public function testAddListener() {
         $request = $this->getRequest();
-        $handler = new EventHandler($this->getLogger(), $request);
+        $response = $this->getResponse();
+
+        $dispatcher = new EventDispatcher($this->getLogger(),$request, $response, 'GET', 'test_server_connect');
+        $dispatcher->setDatasources(new DatasourceFactory(), $this->getDatasources());
+
+        $handler = new EventHandler($this->getLogger(), $request, $response);
+        $handler->setEventDispatcher($dispatcher);
+        $handler->setDatasources(new DatasourceFactory(), $this->getDatasources());
         $listenerConfig = array('listener' => 'tests\\Gossamer\\Horus\\EventListeners\\TestListener', 'event' => 'request_start');
-        
-        $handler->addListener($listenerConfig);
-        $handler->setState('request_start', array());
+        $event = new Event('test_add_listener');
+        $handler->setListener($listenerConfig);
+        $handler->setState('request_start', $event);
         
         $handler->notifyListeners();
         
         $this->assertNotNull($request->getAttribute('result'));
         $this->assertEquals($request->getAttribute('result'), 'TestListener loaded successfully');
     }
-    
-    private function getRequest() {
-        $request = new Request();
-        
-        return $request;
-    }
+
 }

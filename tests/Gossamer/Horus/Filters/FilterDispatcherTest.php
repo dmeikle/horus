@@ -17,10 +17,12 @@
 class FilterDispatcherTest extends \tests\BaseTest
 {
 
+
     public function testFilterRequest() {
-        $filterDispatcher = new \Gossamer\Horus\Filters\FilterDispatcher();
+        $filterDispatcher = new \Gossamer\Horus\Filters\FilterDispatcher($this->getLogger());
         $request = new \Gossamer\Horus\Http\Request();
         $response = new \Gossamer\Horus\Http\Response();
+        $filterDispatcher->setContainer($this->getContainer());
         $filterDispatcher->setFilters($this->getFilters());
 
         $filterDispatcher->filterRequest($request, $response);
@@ -30,8 +32,13 @@ class FilterDispatcherTest extends \tests\BaseTest
     private function getFilters() {
         return array(
             array(
-                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter1'
-
+                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter1',
+            ),
+            array(
+                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter2',
+            ),
+            array(
+                'filter' => 'tests\\Gossamer\\Horus\\Filters\\Filter3'
             )
         );
     }
