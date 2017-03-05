@@ -54,6 +54,19 @@ class FilterDispatcher
         }
     }
 
+    public function setFilterConfigurationPath($path, $keys = null) {
+
+        $config = $this->loadConfig($path);
+
+        if(!is_null($keys)) {
+            $keyList = explode('.', $keys);
+            foreach($keyList as $key) {
+                $config = $config[$key];
+            }
+        }
+        $this->setFilters($config);
+    }
+
     protected function addFilter($filterParams) {
         $filterName = $filterParams['filter'];
         $filter = new $filterName($this->getFilterConfiguration($filterParams));
