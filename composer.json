@@ -24,8 +24,8 @@
     "gossamer/caching": "dev-master",
     "gossamer/pesedget": "v1.1.*",
     "gossamer/pesedget-couchbase": "dev-master",
-    "gossamer/neith": "dev-master",
-    "gossamer/set": "dev-master",
+    "gossamer/neith": "1.1.0",
+    "gossamer/set": "1.1.0",
     "mobiledetect/mobiledetectlib": "^2.8"
   },
   "require-dev": {
