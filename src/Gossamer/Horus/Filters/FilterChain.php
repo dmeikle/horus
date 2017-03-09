@@ -22,6 +22,10 @@ use Gossamer\Horus\Http\HttpInterface;
 
 class FilterChain
 {
+    const IMMEDIATE_WRITE = 'immediate_write';
+
+    const RESULT = 'result';
+
     private $filters = array();
 
     public function addFilter(AbstractFilter $filter) {

@@ -81,12 +81,28 @@ class FilterDispatcher
         return $filterConfig;
     }
 
+    /**
+     * @param HttpInterface $request
+     * @param HttpInterface $response
+     * @return bool
+     * @throws \Exception
+     *
+     * runs through all filters. if the response->immediate_write is not false
+     * then we found something to stop our processing of the request, and simply
+     * output the response
+     */
     public function filterRequest(HttpInterface $request, HttpInterface $response) {
         try{
             $this->filterChain->execute($request, $response, $this->filterChain);
+            if($response->getAttribute(FilterChain::IMMEDIATE_WRITE ) !== false) {
+                return $response->getAttribute(FilterChain::IMMEDIATE_WRITE);
+            }
         }catch(\Exception $e) {
             $this->logger->addError($e->getMessage());
             throw $e;
         }
+        //successful completion
+        return true;
     }
+
 }

@@ -22,7 +22,7 @@
   "require": {
     "monolog/monolog": "1.2.*",
     "gossamer/caching": "dev-master",
-    "gossamer/pesedget": "dev-master",
+    "gossamer/pesedget": "v1.1.*",
     "gossamer/pesedget-couchbase": "dev-master",
     "gossamer/neith": "dev-master",
     "gossamer/set": "dev-master",
