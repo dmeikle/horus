@@ -18,7 +18,6 @@
 
     }
   ],
-  "minimum-stability": "stable",
   "require": {
     "monolog/monolog": "1.2.*",
     "gossamer/caching": "dev-master",
