@@ -11,7 +11,7 @@ use Gossamer\Pesedget\Database\DatasourceFactory;
 class EventHandler
 {
     use \Gossamer\Caching\Traits\CacheManagerTrait;
-    
+
     private $listeners = array();
     
     private $state = null;
@@ -118,7 +118,9 @@ class EventHandler
                 $eventListener->setDatasources($this->datasourceFactory, $this->datasources);
                 $eventListener->setDatasourceKey($this->datasourceKey);
                 $eventListener->setEventDispatcher($this->eventDispatcher);
-                $eventListener->setConfig($listener);               
+                $eventListener->setConfig($listener);
+                $eventListener->setCacheManager($this->cacheManager);
+                
                 $eventListener->execute($this->state, $this->event);
 
             }

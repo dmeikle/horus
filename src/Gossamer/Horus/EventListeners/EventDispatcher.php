@@ -10,7 +10,7 @@ use Gossamer\Pesedget\Database\DatasourceFactory;
 class EventDispatcher
 {
     use \Gossamer\Caching\Traits\CacheManagerTrait;
-    
+
     private $listeners = array();
 
     private $logger = null;
@@ -133,6 +133,7 @@ class EventDispatcher
             $handler->setDatasources($this->datasourceFactory, $this->datasources);
             $handler->setEventDispatcher($this);
             $handler->setListener($listener);
+            $handler->setCacheManager($this->container->get('CacheManager'));
 
             if (array_key_exists('datasource', $listener)) {
                 //manual override - useful for loading info from other models
