@@ -7,6 +7,7 @@ use Gossamer\Horus\Http\HttpInterface;
 use Monolog\Logger;
 use Gossamer\Horus\Core\Request;
 use Gossamer\Pesedget\Database\DatasourceFactory;
+use Gossamer\Set\Utils\Container;
 
 class EventHandler
 {
@@ -120,7 +121,7 @@ class EventHandler
                 $eventListener->setEventDispatcher($this->eventDispatcher);
                 $eventListener->setConfig($listener);
                 $eventListener->setCacheManager($this->cacheManager);
-                
+
                 $eventListener->execute($this->state, $this->event);
 
             }

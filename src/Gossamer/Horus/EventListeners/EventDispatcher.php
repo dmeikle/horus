@@ -6,6 +6,7 @@ namespace Gossamer\Horus\EventListeners;
 use Gossamer\Horus\Http\HttpInterface;
 use Gossamer\Neith\Logging\LoggingInterface;
 use Gossamer\Pesedget\Database\DatasourceFactory;
+use Gossamer\Set\Utils\Container;
 
 class EventDispatcher
 {

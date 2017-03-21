@@ -6,6 +6,7 @@ use Detection\MobileDetect;
 use Gossamer\Horus\Http\HttpInterface;
 use Monolog\Logger;
 use Gossamer\Pesedget\Database\DatasourceFactory;
+use Gossamer\Set\Utils\Container;
 
 
 class AbstractListener
