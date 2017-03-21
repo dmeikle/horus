@@ -10,6 +10,8 @@ use Gossamer\Pesedget\Database\DatasourceFactory;
 
 class EventHandler
 {
+    use \Gossamer\Caching\Traits\CacheManagerTrait;
+    
     private $listeners = array();
     
     private $state = null;

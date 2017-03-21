@@ -9,7 +9,8 @@ use Gossamer\Pesedget\Database\DatasourceFactory;
 
 class EventDispatcher
 {
-
+    use \Gossamer\Caching\Traits\CacheManagerTrait;
+    
     private $listeners = array();
 
     private $logger = null;
@@ -51,7 +52,10 @@ class EventDispatcher
         $this->datasources = $datasources;
     }
 
-    public function setConfiguration(array $config) {
+    public function setConfiguration(array $config, $ymlkey = null) {
+        if(!is_null($ymlkey)) {
+            $this->ymlKey = $ymlkey;
+        }
         $this->configListeners($config);
     }
 
