@@ -61,7 +61,7 @@ class EventDispatcher
     }
 
 
-    public function setContainer(ContainerInterface $container) {
+    public function setContainer(Container $container) {
         $this->container = $container;
     }
 
