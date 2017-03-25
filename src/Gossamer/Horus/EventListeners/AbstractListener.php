@@ -3,6 +3,7 @@
 namespace Gossamer\Horus\EventListeners;
 
 use Detection\MobileDetect;
+use Gossamer\Caching\CacheManager;
 use Gossamer\Horus\Http\HttpInterface;
 use Monolog\Logger;
 use Gossamer\Pesedget\Database\DatasourceFactory;
@@ -26,8 +27,10 @@ class AbstractListener
     protected $datasourceFactory = null;
     
     protected $container = null;
-    
-    private $eventDispatcher = null;
+
+    protected $eventDispatcher = null;
+
+    protected $cacheManager = null;
     
     public function __construct(Logger &$logger, HttpInterface &$request, HttpInterface &$response) {
         $this->logger = $logger;
@@ -35,6 +38,9 @@ class AbstractListener
         $this->response = $response;
     }
 
+    public function setCacheManager(CacheManager $cacheManager) {
+        $this->cacheManager = $cacheManager;
+    }
 
     /**
      * accessor
