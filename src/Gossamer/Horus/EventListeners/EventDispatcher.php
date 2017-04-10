@@ -68,7 +68,9 @@ class EventDispatcher
     public function configListeners(array $listeners) {
 
         foreach ($listeners as $uri => $listener) {
-
+            if(!is_array($listener)) {
+                continue;
+            }
             if (($uri == 'all' || $uri == $this->ymlKey) && (array_key_exists('listeners', $listener) && count($listener['listeners']) > 0)) {
 
 
