@@ -30,4 +30,9 @@ class Request implements HttpInterface{
         
         return $this->attributes[$key];
     }
+
+
+    public function getAttributes() {
+        return $this->attributes;
+    }
 }

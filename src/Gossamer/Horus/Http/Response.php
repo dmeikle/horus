@@ -11,7 +11,7 @@ namespace Gossamer\Horus\Http;
 
 class Response implements HttpInterface
 {
-    private $attributes = array();
+    protected $attributes = array();
 
     public function setAttribute($key, $value) {
         $this->attributes[$key] = $value;
@@ -23,5 +23,9 @@ class Response implements HttpInterface
         }
 
         return $this->attributes[$key];
+    }
+
+    public function getAttributes() {
+        return $this->attributes;
     }
 }
