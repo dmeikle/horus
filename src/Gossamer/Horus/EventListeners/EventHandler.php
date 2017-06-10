@@ -121,6 +121,7 @@ class EventHandler
                 $eventListener->setEventDispatcher($this->eventDispatcher);
                 $eventListener->setConfig($listener);
                 $eventListener->setCacheManager($this->cacheManager);
+                $eventListener->setContainer($this->container);
 
                 $eventListener->execute($this->state, $this->event);
 

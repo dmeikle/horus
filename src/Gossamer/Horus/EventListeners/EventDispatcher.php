@@ -137,6 +137,7 @@ class EventDispatcher
             $handler->setEventDispatcher($this);
             $handler->setListener($listener);
             $handler->setCacheManager($this->container->get('CacheManager'));
+            $handler->setContainer($this->container);
 
             if (array_key_exists('datasource', $listener)) {
                 //manual override - useful for loading info from other models
